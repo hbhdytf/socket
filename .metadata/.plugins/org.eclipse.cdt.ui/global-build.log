@@ -1,0 +1,2259 @@
+19:22:07 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_open':
+jni/hook.c:85:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:86:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:188:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:189:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:190:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:192:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:193:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:196:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:197:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:198:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:199:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] Compile thumb  : hook <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:28:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:36:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:39:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+jni/process.c:47:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_open_addr);
+  ^
+jni/process.c:49:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_open_addr);
+  ^
+jni/process.c:50:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_close_addr);
+  ^
+jni/process.c:51:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= elf.c
+jni/elf.c: In function 'find_sym_in_rel':
+jni/elf.c:103:3: warning: format '%p' expects argument of type 'void *', but argument 2 has type 'Elf32_Rel' [-Wformat=]
+   printf("rel addr %p\n", rel);
+   ^
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Compile thumb  : inj_dalvik <= ptrace.c
+[armeabi] Compile thumb  : inj_dalvik <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:28:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:36:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:39:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+jni/process.c:47:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_open_addr);
+  ^
+jni/process.c:49:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_open_addr);
+  ^
+jni/process.c:50:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_close_addr);
+  ^
+jni/process.c:51:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_close_addr);
+  ^
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+19:52:33 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c:80:170: error: 'Posix_sendtoBytes' undeclared here (not in a function)
+ int (*old_Posix_sendtoBytes)(JNIEnv* env, jobject, jobject javaFd, jobject javaBytes, jint byteOffset, jint byteCount, jint flags, jobject javaInetAddress, jint port) = Posix_sendtoBytes;
+                                                                                                                                                                          ^
+jni/hook.c: In function 'new_Posix_sendtoBytes':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD Posix_sendtoBytes real path %x", old_open);
+  ^
+jni/hook.c:88:53: error: 'new_open' undeclared (first use in this function)
+  LOGD("[+] The NEW Posix_sendtoBytes real path %x", new_open);
+                                                     ^
+jni/hook.c:37:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:88:53: note: each undeclared identifier is reported only once for each function it appears in
+  LOGD("[+] The NEW Posix_sendtoBytes real path %x", new_open);
+                                                     ^
+jni/hook.c:37:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+19:55:08 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_Posix_sendtoBytes':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'jint (*)(const struct JNINativeInterface **, void *, void *, void *, jint,  jint,  jint,  void *, jint)' [-Wformat=]
+  LOGD("[+] The OLD Posix_sendtoBytes real path %x", new_Posix_sendtoBytes);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const struct JNINativeInterface **, void *, void *, void *, jint,  jint,  jint,  void *, jint)' [-Wformat=]
+  LOGD("[+] The NEW Posix_sendtoBytes real path %x", old_Posix_sendtoBytes);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] Compile thumb  : hook <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:26:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:34:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:37:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+jni/process.c:43:7: error: 'old_open_addr' undeclared (first use in this function)
+  fcn(&old_open_addr, &new_open_addr, &old_close_addr, &new_close_addr);
+       ^
+jni/process.c:43:7: note: each undeclared identifier is reported only once for each function it appears in
+jni/process.c:43:23: error: 'new_open_addr' undeclared (first use in this function)
+  fcn(&old_open_addr, &new_open_addr, &old_close_addr, &new_close_addr);
+                       ^
+jni/process.c:43:39: error: 'old_close_addr' undeclared (first use in this function)
+  fcn(&old_open_addr, &new_open_addr, &old_close_addr, &new_close_addr);
+                                       ^
+jni/process.c:43:56: error: 'new_close_addr' undeclared (first use in this function)
+  fcn(&old_open_addr, &new_open_addr, &old_close_addr, &new_close_addr);
+                                                        ^
+make.exe: *** [obj/local/armeabi/objs/hook/process.o] Error 1
+19:57:13 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:27:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:35:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:38:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+In file included from jni/process.h:30:0,
+                 from jni/process.c:7:
+jni/process.c:46:43: error: 'old_open_addr' undeclared (first use in this function)
+  LOGD("[+] Get old address global  %x\n", old_open_addr);
+                                           ^
+jni/utils.h:98:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/process.c:46:43: note: each undeclared identifier is reported only once for each function it appears in
+  LOGD("[+] Get old address global  %x\n", old_open_addr);
+                                           ^
+jni/utils.h:98:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/process.c:48:43: error: 'new_open_addr' undeclared (first use in this function)
+  LOGD("[+] Get new address global  %x\n", new_open_addr);
+                                           ^
+jni/utils.h:98:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/process.c:49:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_close_addr);
+  ^
+jni/process.c:50:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/process.o] Error 1
+19:57:34 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:27:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:35:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:38:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+jni/process.c:46:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_Posix_sendtoBytes_addr);
+  ^
+jni/process.c:48:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_Posix_sendtoBytes_addr);
+  ^
+jni/process.c:49:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_close_addr);
+  ^
+jni/process.c:50:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+./obj/local/armeabi/objs/hook/hook.o:hook.c:old_Posix_sendtoBytes: error: undefined reference to 'Posix_sendtoBytes'
+collect2.exe: error: ld returned 1 exit status
+make.exe: *** [obj/local/armeabi/libhook.so] Error 1
+20:23:57 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c:79:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sendto'
+ int (*old_sendto)sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t) = sendto;
+                  ^
+jni/hook.c:80:91: error: unknown type name 'socklen_t'
+ int new_sendto(int s, const void * msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen)
+                                                                                           ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:101:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:148:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:204:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:205:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:206:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:208:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:209:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:212:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:213:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:214:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:215:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+20:25:11 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c:79:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sendto'
+ ssize_t (*old_sendto)sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t) = sendto;
+                      ^
+jni/hook.c:80:95: error: unknown type name 'socklen_t'
+ ssize_t new_sendto(int s, const void * msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen)
+                                                                                               ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:101:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:148:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:204:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:205:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:206:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:208:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:209:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:212:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:213:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:214:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:215:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+20:26:05 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c:80:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sendto'
+ ssize_t (*old_sendto)sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t) = sendto;
+                      ^
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:42: error: 'new_Posix_sendtoBytes' undeclared (first use in this function)
+  LOGD("[+] The OLD sendto real path %x", new_Posix_sendtoBytes);
+                                          ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:87:42: note: each undeclared identifier is reported only once for each function it appears in
+  LOGD("[+] The OLD sendto real path %x", new_Posix_sendtoBytes);
+                                          ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:88:42: error: 'old_Posix_sendtoBytes' undeclared (first use in this function)
+  LOGD("[+] The NEW sendto real path %x", old_Posix_sendtoBytes);
+                                          ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:89:14: error: 'old_sendto' undeclared (first use in this function)
+  int res = (*old_sendto)(s, msg, len, flags,to, tolen); //?????
+              ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+20:26:34 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c:80:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sendto'
+ ssize_t (*old_sendto)sendto(int, const void *, size_t, int, const struct sockaddr *, socklen_t) = sendto;
+                      ^
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:42: error: 'old_sendto' undeclared (first use in this function)
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+                                          ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:88:42: note: each undeclared identifier is reported only once for each function it appears in
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+                                          ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+20:26:52 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+In file included from jni/process.h:30:0,
+                 from jni/inj_dalvik.c:8:
+jni/inj_dalvik.c: In function 'main':
+jni/inj_dalvik.c:23:19: error: 'key' undeclared (first use in this function)
+  LOGD("key:%s\n", key);
+                   ^
+jni/utils.h:98:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/inj_dalvik.c:23:19: note: each undeclared identifier is reported only once for each function it appears in
+  LOGD("key:%s\n", key);
+                   ^
+jni/utils.h:98:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+make.exe: *** [obj/local/armeabi/objs/inj_dalvik/inj_dalvik.o] Error 1
+20:33:28 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Compile thumb  : inj_dalvik <= process.c
+jni/process.c: In function 'hook_entry':
+jni/process.c:27:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("The Handle of libhook: %x\n", handle);
+  ^
+jni/process.c:35:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+  LOGD("find do_hook pre %x\n", fcn);
+  ^
+jni/process.c:38:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(long unsigned int *, long unsigned int *, long unsigned int *, long unsigned int *)' [-Wformat=]
+   LOGD("find do_hook %x\n", fcn);
+   ^
+jni/process.c:46:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_Posix_sendtoBytes_addr);
+  ^
+jni/process.c:48:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_Posix_sendtoBytes_addr);
+  ^
+jni/process.c:49:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get old address global  %x\n", old_close_addr);
+  ^
+jni/process.c:50:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] Get new address global  %x\n", new_close_addr);
+  ^
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:10:20 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:11:16 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:27:08 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:102:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:103:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:149:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:150:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:205:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:206:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:207:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:209:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:210:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:213:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:215:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:34:34 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:38:12 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+21:42:26 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+22:02:55 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+22:04:27 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+22:07:02 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+22:58:09 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+23:25:16 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:30: warning: dereferencing 'void *' pointer [enabled by default]
+  LOGD("[+] The msg = %x", msg[0]);
+                              ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:90:2: error: invalid use of void expression
+  LOGD("[+] The msg = %x", msg[0]);
+  ^
+jni/hook.c:94:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:108:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:155:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:211:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:212:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:213:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:215:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:219:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:220:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:221:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:222:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:26:17 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:33: warning: dereferencing 'void *' pointer [enabled by default]
+  LOGD("[+] The msg = %x", (int)(*msg));
+                                 ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:90:2: error: invalid use of void expression
+  LOGD("[+] The msg = %x", (int)(*msg));
+  ^
+jni/hook.c:94:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:108:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:155:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:211:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:212:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:213:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:215:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:219:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:220:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:221:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:222:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:26:44 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:33: warning: dereferencing 'void *' pointer [enabled by default]
+  LOGD("[+] The msg = %x", (int)(*msg));
+                                 ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:90:2: error: invalid use of void expression
+  LOGD("[+] The msg = %x", (int)(*msg));
+  ^
+jni/hook.c:94:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:108:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:155:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:211:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:212:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:213:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:215:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:216:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:219:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:220:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:221:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:222:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:30:24 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:33: warning: dereferencing 'void *' pointer [enabled by default]
+  LOGD("[+] The msg = %x", (int)(*tmp));
+                                 ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:91:2: error: invalid use of void expression
+  LOGD("[+] The msg = %x", (int)(*tmp));
+  ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:30:46 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:27: error: expected expression before 'int'
+  LOGD("[+] The msg = %x", int(*tmp));
+                           ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:31:09 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:27: error: expected expression before 'int'
+  LOGD("[+] The msg = %x", int(tmp));
+                           ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:31:23 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+23:33:21 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:94:31: error: invalid type argument of '->' (have 'const struct sockaddr')
+  LOGD("[+] The to = %s", (*to)->sa_data);
+                               ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:34:08 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+23:42:29 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:94:31: error: invalid type argument of '->' (have 'const struct sockaddr')
+  LOGD("[+] The to = %c", (*to)->sa_data[1]);
+                               ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+23:46:37 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:87:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:88:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:90:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:91:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:94:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:95:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:109:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:110:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:156:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:157:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:212:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:213:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:214:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:216:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:217:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:220:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:221:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:222:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:223:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+23:56:23 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:93:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+   LOGD("[+] The tolen = %s", *fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+00:32:49 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+00:35:30 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:93:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+  LOGD("[+] The msg = %x", tmp);
+  ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+00:53:29 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+00:59:45 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Compile thumb  : inj_dalvik <= inj_dalvik.c
+[armeabi] Executable     : inj_dalvik
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+01:19:21 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+01:19:39 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:93:27: warning: dereferencing 'void *' pointer [enabled by default]
+  LOGD("[+] The msg = %x", *tmp);
+                           ^
+jni/hook.c:38:83: note: in definition of macro 'LOGD'
+ #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, fmt, ##args)
+                                                                                   ^
+jni/hook.c:93:2: error: invalid use of void expression
+  LOGD("[+] The msg = %x", *tmp);
+  ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+make.exe: *** [obj/local/armeabi/objs/hook/hook.o] Error 1
+01:20:09 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:93:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int *' [-Wformat=]
+  LOGD("[+] The msg = %x", (int*)tmp);
+  ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+01:21:07 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:93:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'char *' [-Wformat=]
+  LOGD("[+] The msg = %x", (char*)tmp);
+  ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+01:22:49 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:96:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:97:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:109:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:113:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:116:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:117:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:132:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:179:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:235:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:236:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:237:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:239:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:240:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:243:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:244:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:245:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:246:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik
+01:29:33 **** Incremental Build of configuration Default for project HookSocket ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+Android NDK: WARNING:jni/Android.mk:hook: non-system libraries in linker flags: -lcrypto -lssl    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+[armeabi] Compile thumb  : hook <= hook.c
+jni/hook.c: In function 'new_sendto':
+jni/hook.c:89:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+  LOGD("[+] The OLD sendto real path %x", new_sendto);
+  ^
+jni/hook.c:90:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+  LOGD("[+] The NEW sendto real path %x", old_sendto);
+  ^
+jni/hook.c:92:12: warning: initialization discards 'const' qualifier from pointer target type [enabled by default]
+  void *tmp=msg;
+            ^
+jni/hook.c:97:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+  LOGD("[+] The to = %x", to);
+  ^
+jni/hook.c:98:2: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int' [-Wformat=]
+  LOGD("[+] The tolen = %s", tolen);
+  ^
+jni/hook.c: In function 'new_recvfrom':
+jni/hook.c:110:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ssize_t (*)(int,  const void *, size_t,  int,  const struct sockaddr *, int)' [-Wformat=]
+   LOGD("[+] The OLD recvfrom real path %x", new_sendto);
+   ^
+jni/hook.c:111:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int,  const void *, size_t,  int,  const struct sockaddr *, socklen_t)' [-Wformat=]
+   LOGD("[+] The NEW recvfrom real path %x", old_sendto);
+   ^
+jni/hook.c:114:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'void *' [-Wformat=]
+   LOGD("[+] The msg = %x", buf);
+   ^
+jni/hook.c:117:3: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'const struct sockaddr *' [-Wformat=]
+   LOGD("[+] The to = %x", from);
+   ^
+jni/hook.c:118:3: warning: format '%s' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+   LOGD("[+] The tolen = %s", fromlen);
+   ^
+jni/hook.c: In function 'new_open':
+jni/hook.c:133:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The OLD open real path %x", old_open);
+  ^
+jni/hook.c:134:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  LOGD("[+] The NEW open real path %x", new_open);
+  ^
+jni/hook.c: In function 'new_close':
+jni/hook.c:180:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The OLD close real path %x", old_close);
+  ^
+jni/hook.c:181:2: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(int)' [-Wformat=]
+  LOGD("[+] The NEW close real path %x", new_close);
+  ^
+jni/hook.c: In function 'do_hook':
+jni/hook.c:236:2: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'int (*)(const char *, int)' [-Wformat=]
+  snprintf(value, PROPERTY_VALUE_MAX, "%u", old_open);
+  ^
+jni/hook.c:237:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_open_addr = old_open;
+                 ^
+jni/hook.c:238:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_open address %p\n", *old_open_addr);
+  ^
+jni/hook.c:240:17: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_open_addr = new_open;
+                 ^
+jni/hook.c:241:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_open address %p\n", *new_open_addr);
+  ^
+jni/hook.c:244:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *old_close_addr = old_close;
+                  ^
+jni/hook.c:245:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print old_close address %p\n", *old_close_addr);
+  ^
+jni/hook.c:246:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *new_close_addr = new_close;
+                  ^
+jni/hook.c:247:2: warning: format '%p' expects argument of type 'void *', but argument 4 has type 'long unsigned int' [-Wformat=]
+  LOGD("[+] just for test print new_close address %p\n", *new_close_addr);
+  ^
+[armeabi] SharedLibrary  : libhook.so
+[armeabi] Install        : libhook.so => libs/armeabi/libhook.so
+[armeabi] Install        : inj_dalvik => libs/armeabi/inj_dalvik

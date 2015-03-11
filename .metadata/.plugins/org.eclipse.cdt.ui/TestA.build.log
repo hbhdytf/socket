@@ -1,0 +1,9 @@
+17:04:41 **** Build of configuration Default for project TestA ****
+"D:\\Android\\ADT\\android-ndk-r10d\\ndk-build.cmd" all 
+[armeabi] Compile++ thumb: TestA <= TestA.cpp
+[armeabi] StaticLibrary  : libstdc++.a
+[armeabi] SharedLibrary  : libTestA.so
+[armeabi] Install        : libTestA.so => libs/armeabi/libTestA.so
+
+17:04:45 Build Finished (took 4s.261ms)
+
